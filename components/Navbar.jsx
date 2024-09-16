@@ -51,7 +51,7 @@ export default function Navbar() {
           {isMenuOpen && (
             <div className="md:hidden">
               <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                {['Resume', 'About', 'Contact'].map((item) => (
+                {['Resume'].map((item) => (
                   <a
                     key={item}
                     href={`#${item.toLowerCase()}`}
