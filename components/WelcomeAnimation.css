@@ -1,0 +1,86 @@
+.welcome-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0f0f0f, #2a2a2a);
+    color: #ffffff;
+    z-index: 9999;
+    overflow: hidden;
+    perspective: 1000px;
+}
+
+.welcome-text, .to-text, .app-name, .interactive-element {
+    opacity: 0;
+    transform: translateZ(-100px) rotateX(-20deg);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.welcome-text.animate, .to-text.animate, .app-name.animate, .interactive-element.animate {
+    opacity: 1;
+    transform: translateZ(0) rotateX(0);
+}
+
+.welcome-text {
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.to-text {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.app-name {
+    font-size: 6rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    background: linear-gradient(45deg, #efb307, #ffdb78);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(97, 218, 251, 0.5);
+}
+
+.interactive-element {
+    font-size: 1.8rem;
+    padding: 12px 36px;
+    background: linear-gradient(45deg, #efb307, #fccd4d);
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px #efb10752;
+}
+
+.interactive-element:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px #efb107b2;
+}
+
+.floating-shape {
+    position: absolute;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.shape1 { top: 10%; left: 10%; width: 100px; height: 100px; }
+.shape2 { top: 70%; right: 15%; width: 150px; height: 150px; }
+.shape3 { bottom: 20%; left: 20%; width: 80px; height: 80px; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(10deg); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.1; }
+    50% { transform: scale(1.1); opacity: 0.2; }
+}
