@@ -78,7 +78,7 @@ export default function PortfolioGrid() {
             onClick={() => setShowContactPopup(true)}
             className="mt-6 px-8 py-4 bg-gray-900 text-white font-semibold rounded-full shadow-md hover:bg-opacity-90 transition-all duration-300 flex items-center group"
           >
-            <span className="mr-2 text-sm uppercase tracking-wider">Let's build something amazing</span>
+            <span className="mr-2 text-sm uppercase tracking-wider">Let&apos;s build something amazing</span>
             <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
@@ -109,7 +109,7 @@ export default function PortfolioGrid() {
           className="col-span-2 lg:col-span-1 p-8 bg-gradient-to-l from-[#efb307] to-[#707070] rounded-2xl shadow-lg text-gray-900 transition-all duration-300 hover:shadow-2xl"
         >
           <h3 className="text-3xl font-semibold mb-4">Get In Touch</h3>
-          <p className="text-xl mb-6 text-gray-800">Have some questions? Let's get in touch!</p>
+          <p className="text-xl mb-6 text-gray-800">Have some questions? Let&apos;s get in touch!</p>
           <div className="flex space-x-6 mt-4">
             <a href="https://github.com/MaingiMuema" className="text-4xl text-gray-900 hover:text-white transition-all duration-300 hover:scale-110 transform"><FaGithub /></a>
             <a href="https://ke.linkedin.com/in/muema-mark-maingi-3790a020b" className="text-4xl text-gray-900 hover:text-white transition-all duration-300 hover:scale-110 transform"><FaLinkedin /></a>
