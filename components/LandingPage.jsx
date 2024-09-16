@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import PortfolioGrid from './PortfolioGrid';
 import ContactSection from './ContactSection';
 import WelcomeAnimation from './WelcomeAnimation';
+import MouseAnimation from './MouseAnimation'
 import { useState } from 'react';
 
 export default function LandingPage() {
@@ -22,7 +23,7 @@ export default function LandingPage() {
                 <ContactSection />
             </>
         )}
-        
+            <MouseAnimation />
     </div>
   );
 }

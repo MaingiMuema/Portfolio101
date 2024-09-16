@@ -12,7 +12,7 @@ export default function Navbar() {
     }, []);
 
     return (
-      <nav className={`sticky top-0 z-50 bg-gradient-to-r from-[#707070] to-[#efb307] m-4 rounded-xl transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+      <nav className={`sticky top-0 z-50 bg-gradient-to-r from-[#efb307] to-[#707070] m-4 rounded-xl transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <a href="/" className="text-xl font-bold text-white hover:text-gray-200 transition duration-150 ease-in-out">
@@ -21,17 +21,8 @@ export default function Navbar() {
             
             {/* Desktop menu */}
             <div className="hidden md:flex space-x-4">
-              {['Resume', 'About',].map((item) => (
-                item === 'Resume' ? (
-                  <a
-                    key={item}
-                    href="/Mark Maingi CV.pdf" // Update this path to your actual resume file
-                    download="Mark Maingi CV.pdf" // Update this to your preferred filename
-                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md font-medium transition duration-150 ease-in-out"
-                  >
-                    {item}
-                  </a>
-                ) : (
+              {['Resume',].map((item) => (
+                
                   <a
                     key={item}
                     href={`${item.toLowerCase()}`}
@@ -39,7 +30,7 @@ export default function Navbar() {
                   >
                     {item}
                   </a>
-                )
+                
               ))}
             </div>
 
