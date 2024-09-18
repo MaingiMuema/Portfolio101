@@ -3,7 +3,7 @@ import Navbar from './Navbar';
 
 const About = () => {
   return (
-    <section id="about" className="py-10 md:py-20 bg-gradient-to-b from-gray-50 to-white">
+    <section id="about" className="py-10 pt-0 md:py-20 bg-gradient-to-b from-gray-50 to-white">
         <Navbar />
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-center text-[#efb307]">About Me</h2>
@@ -21,7 +21,9 @@ const About = () => {
                 <li>HTML5 & CSS3</li>
                 <li>JavaScript (ES6+)</li>
                 <li>React.js</li>
+                <li>Next.js</li>
                 <li>Bootstrap v5</li>
+                <li>Tailwind CSS</li>
                 <li>Responsive Web Design</li>
               </ul>
             </div>
