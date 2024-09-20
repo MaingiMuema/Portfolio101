@@ -129,9 +129,13 @@ export default function PortfolioGrid() {
             <div>
               <h4 className="text-xl font-medium mb-2">Frontend</h4>
               <ul className="list-disc list-inside text-gray-800">
+                <li>HTML5 & CSS3</li>
+                <li>JavaScript (ES6+)</li>
                 <li>React</li>
                 <li>Next.js</li>
                 <li>Tailwind CSS</li>
+                <li>Bootstrap v5</li>
+                <li>Responsive Web Design</li>
               </ul>
             </div>
             <div>
@@ -139,7 +143,13 @@ export default function PortfolioGrid() {
               <ul className="list-disc list-inside text-gray-800">
                 <li>Node.js</li>
                 <li>Express</li>
+                <li>Supabase</li>
+                <li>PHP</li>
+                <li>C</li>
+                <li>Laravel</li>
+                <li>Postgresql</li>
                 <li>MongoDB</li>
+                <li>RESTful APIs</li>
               </ul>
             </div>
           </div>

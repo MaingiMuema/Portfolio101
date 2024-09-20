@@ -1,24 +1,32 @@
 "use client"
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 
 const MouseAnimation = () => {
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
     const [trail, setTrail] = useState([]);
+    const [isClicking, setIsClicking] = useState(false);
+
+    const handleMouseMove = useCallback((e) => {
+        setMousePosition({ x: e.clientX, y: e.clientY });
+    }, []);
+
+    const handleMouseDown = useCallback(() => setIsClicking(true), []);
+    const handleMouseUp = useCallback(() => setIsClicking(false), []);
 
     useEffect(() => {
-        const handleMouseMove = (e) => {
-            setMousePosition({ x: e.clientX, y: e.clientY });
-        };
-
         window.addEventListener('mousemove', handleMouseMove);
+        window.addEventListener('mousedown', handleMouseDown);
+        window.addEventListener('mouseup', handleMouseUp);
 
         return () => {
             window.removeEventListener('mousemove', handleMouseMove);
+            window.removeEventListener('mousedown', handleMouseDown);
+            window.removeEventListener('mouseup', handleMouseUp);
         };
-    }, []);
+    }, [handleMouseMove, handleMouseDown, handleMouseUp]);
 
     useEffect(() => {
-        setTrail((prevTrail) => [...prevTrail, mousePosition].slice(-20));
+        setTrail((prevTrail) => [...prevTrail, mousePosition].slice(-30));
     }, [mousePosition]);
 
     return (
@@ -28,18 +36,32 @@ const MouseAnimation = () => {
             left: 0,
             pointerEvents: 'none',
             zIndex: 9999,
-            cursor: 'none', // Add this line to hide the default cursor
-            width: '100vw',  // Add this to cover the entire viewport
-            height: '100vh', // Add this to cover the entire viewport
+            cursor: 'none',
+            width: '100vw',
+            height: '100vh',
         }}>
             {/* Custom cursor */}
             <div
                 style={{
                     position: 'absolute',
-                    left: mousePosition.x - 10, // Center the custom cursor
-                    top: mousePosition.y - 10,  // Center the custom cursor
-                    width: 20,
-                    height: 20,
+                    left: mousePosition.x - 15,
+                    top: mousePosition.y - 15,
+                    width: isClicking ? 25 : 30,
+                    height: isClicking ? 25 : 30,
+                    backgroundColor: 'transparent',
+                    border: '2px solid white',
+                    borderRadius: '50%',
+                    transition: 'all 0.1s ease-out',
+                    pointerEvents: 'none',
+                }}
+            />
+            <div
+                style={{
+                    position: 'absolute',
+                    left: mousePosition.x - 5,
+                    top: mousePosition.y - 5,
+                    width: 10,
+                    height: 10,
                     backgroundColor: 'white',
                     borderRadius: '50%',
                     pointerEvents: 'none',
@@ -52,11 +74,11 @@ const MouseAnimation = () => {
                         position: 'absolute',
                         left: point.x,
                         top: point.y,
-                        width: 10 - index * 0.5,
-                        height: 10 - index * 0.5,
-                        backgroundColor: `rgba(255, 255, 255, ${1 - index * 0.05})`,
+                        width: 8 - index * 0.25,
+                        height: 8 - index * 0.25,
+                        backgroundColor: `rgba(239, 179, 7, ${1 - index * 0.03})`,
                         borderRadius: '50%',
-                        transition: 'all 0.1s ease-out',
+                        transition: 'all 0.05s ease-out',
                     }}
                 />
             ))}
