@@ -15,8 +15,8 @@ import { useState } from "react";
 const featuredProjects = [
   {
     name: "Forecast254",
-    image: "/Aminiblock.png",
-    url: "https://www.aminiblock.com",
+    image: "/forecast254.png",
+    url: "https://forecast254.vercel.app/",
   },
   {
     name: "PropertyFinder",
