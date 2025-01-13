@@ -61,6 +61,7 @@ const About = () => {
                 <li>Postgresql</li>
                 <li>Supabase</li>
                 <li>RESTful APIs</li>
+                <li>Agents Development and Integrations</li>
                 <li>Large Language Models System Integration</li>
               </ul>
             </div>
